@@ -20,8 +20,12 @@
  *    ['Array', 'Number', 'string'], 'Date'    => -1
  *    [0, 1, 2, 3, 4, 5], 5    => 5
  */
-function findElement(/* arr, value */) {
-  throw new Error('Not implemented');
+function findElement(arr, value) {
+  // throw new Error('Not implemented');
+  if (arr.includes(value)) {
+    return arr.indexOf(value);
+  }
+  return -1;
 }
 
 /**
@@ -52,8 +56,11 @@ function generateOdds(/* len */) {
  *    [0, 1, 2, 3, 4, 5] => [0, 1, 2, 3, 4, 5,   0, 1, 2, 3, 4, 5]
  *    [] => []
  */
-function doubleArray(/* arr */) {
-  throw new Error('Not implemented');
+function doubleArray(arr) {
+  // throw new Error('Not implemented');
+  const arr1 = [];
+  arr1.push.apply(arr, arr);
+  return arr1;
 }
 
 
@@ -68,8 +75,14 @@ function doubleArray(/* arr */) {
  *    [-1, 2, -5, -4, 0] => [ 2 ]
  *    [] => []
  */
-function getArrayOfPositives(/* arr */) {
-  throw new Error('Not implemented');
+function getArrayOfPositives(arr) {
+  // throw new Error('Not implemented');
+  for (let i = 0; i < arr.length; i += 1) {
+    if (arr[i] < 0) {
+      arr.pop(arr[i]);
+    }
+  }
+  return arr;
 }
 
 /**
@@ -83,8 +96,15 @@ function getArrayOfPositives(/* arr */) {
  *    [ 1, 2, 3, 4, 5 ] => []
  *    [ 'cat, 'dog', 'raccoon' ] => [ 'cat', 'dog', 'raccoon' ]
  */
-function getArrayOfStrings(/* arr */) {
-  throw new Error('Not implemented');
+function getArrayOfStrings(arr) {
+  // throw new Error('Not implemented');
+  const arr1 = [];
+  for (let i = 0; i < arr.length; i += 1) {
+    if (typeof (arr[i]) === 'string') {
+      arr1.push(arr[i]);
+    }
+  }
+  return arr1;
 }
 
 /**
